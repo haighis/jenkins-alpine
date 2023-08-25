@@ -18,7 +18,5 @@ docker build -t somej .
 # Default User - admin
 Default user is `admin` with password `admin`
 
-docker exec -it -u root suspicious_babbage bash
-
 # Reference
 - https://www.baeldung.com/ops/root-user-password-docker-container
