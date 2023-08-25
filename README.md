@@ -4,12 +4,12 @@ Jenkins minimal docker container with Jenkins alpine, git, docker
 
 # Build
 ```
-docker build -t somej .
+docker build -t haighis/jenkins-alpine .
 ```
 
 # Run
  ```
- docker run -d -p 8080:8080 somej
+ docker run -d -p 8080:8080 haighis/jenkins-alpine
  ```
 
  # Access
