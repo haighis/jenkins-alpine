@@ -9,7 +9,8 @@ docker build -t haighis/jenkins-alpine .
 
 # Run
  ```
- docker run -d -p 8080:8080 haighis/jenkins-alpine
+ docker run -d -p 8181:8181 haighis/jenkins-alpine
+docker run -p 8181:8181 -it --name jenkins -v "/var/run/docker.sock:/var/run/docker.sock:rw" haighis/jenkins-alpine
  ```
 
  # Access
