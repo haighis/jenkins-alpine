@@ -6,6 +6,9 @@ RUN apk -U add docker
 RUN apk update && apk upgrade
 RUN apk add sudo
 RUN echo "root:password" | chpasswd
+RUN apk add dotnet6-sdk
+# RUN apk add openrc
+# RUN apk add podman
 # Setup Jenkins
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 RUN apk add --update shadow \
@@ -14,6 +17,7 @@ RUN apk add --update shadow \
 USER jenkins
 
 RUN jenkins-plugin-cli --plugins \
+pipeline-stage-view \ 
 blueocean \
 build-environment \
 cloudbees-folder \
