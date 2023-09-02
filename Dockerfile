@@ -7,6 +7,7 @@ RUN apk update && apk upgrade
 RUN apk add sudo
 RUN echo "root:password" | chpasswd
 RUN apk add dotnet6-sdk
+RUN apk add terraform --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 # RUN apk add openrc
 # RUN apk add podman
 # Setup Jenkins
