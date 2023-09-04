@@ -1,0 +1,31 @@
+pipelineJob('Entity Data Server') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url("hhttps://github.com/haighis/entitydata-apiserver.git")
+          }
+          branch('master')
+        }
+      }
+      scriptPath("Jenkinsfile")
+    }
+  }
+}
+
+pipelineJob('Jenkins Alpine') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url("https://github.com/haighis/jenkins-alpine.git")
+          }
+          branch('master')
+        }
+      }
+      scriptPath("Jenkinsfile")
+    }
+  }
+}

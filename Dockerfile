@@ -2,6 +2,8 @@ FROM jenkins/jenkins:alpine
 
 USER root
 
+ENV JENKINS_REF /usr/share/jenkins/ref
+
 RUN apk -U add docker
 RUN apk update && apk upgrade
 RUN apk add sudo
@@ -18,6 +20,7 @@ RUN apk add --update shadow \
 USER jenkins
 
 RUN jenkins-plugin-cli --plugins \
+job-dsl \
 pipeline-stage-view \ 
 blueocean \
 build-environment \
