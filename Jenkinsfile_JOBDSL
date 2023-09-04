@@ -1,0 +1,15 @@
+pipelineJob('sample-app') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url("https://github.com/haighis/jenkins-alpine.git")
+          }
+          branch('master')
+        }
+      }
+      scriptPath("Jenkinsfile_JOBDSL")
+    }
+  }
+}
