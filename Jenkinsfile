@@ -3,7 +3,7 @@
 // - http://localhost:8787/env-vars.html
 pipeline {
     agent any
-    options([parameters([string('DOCKER_TAG')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+    //options([parameters([string('DOCKER_TAG')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
     //properties([parameters([string(defaultValue: 'haighis', name: 'DOCKER_LOGIN'), password(defaultValueAsSecret: <object of type hudson.util.Secret>, name: 'DOCKER_PASSWORD'), string('DOCKER_TAG')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
     stages {
         stage("Build & Publish Docker Image") {
