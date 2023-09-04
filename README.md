@@ -15,8 +15,8 @@ docker tag haighis/jenkins-alpine haighis/jenkins-alpine:0.5.0
 
 # Run
  ```
-docker run -d -p 8181:8181 haighis/jenkins-alpine
 docker run -p 8888:8080 -it --name jenkins -v "/var/run/docker.sock:/var/run/docker.sock:rw" haighis/jenkins-alpine:0.6.0
+docker run -p 9999:8080 -it -v "/var/run/docker.sock:/var/run/docker.sock:rw" haighis/jenkins-alpine-new
  ```
 
  # Define Jenkins Jobs via Jobs DSL
@@ -31,6 +31,10 @@ This will allow for creating all jobs from a groovy script in a seed job. Saves 
  
  Once SeedJob builds all default jobs are now present.
 
+ # TODO
+ - Add credentials for docker hub account called DOCKER_CREDENTIALS. Enter your username and password
+ - For Jenkins Aline job add a parameter called DOCKER_TAG that is used with this build to define the docker tag
+
  # Access
 - `http://localhost:8888`
 
@@ -40,3 +44,4 @@ Default user is `admin` with password `admin`
 # Reference
 - https://www.baeldung.com/ops/root-user-password-docker-container
 - https://virtualzone.de/posts/alpine-podman/
+- https://blog.opstree.com/2023/06/06/jenkins-job-creation-using-multibranch-job-dsl/
